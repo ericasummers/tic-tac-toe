@@ -4,12 +4,12 @@ function Player(mark, name) {
     this.pChoices = [];
 }
 
-function Board(row, column) {
-    this.rows = [];
-    this.columns = [];
-}
+// function Board(row, column) {
+//     this.rowss = [];
+//     this.columns = [];
+// }
 
-var winningCombination = [
+var winningCombinations = [
     [1, 2, 3],
     [4, 5, 6],
     [7, 8, 9],
@@ -21,11 +21,15 @@ var winningCombination = [
 ];
 
 Player.prototype.checkVictory = function() {
-    if (this.pChoices === winningCombination) {
+    for (var i = 0; i <= 7; i++) {
+        winningCombinations[i] === pChoices;
+    }
+    if (pChoices === winningCombinations[i]) {
         alert("You won, congratulations!");
     }
 }
 
+var playerone = new Player("X", "playerone");
 //
 //
 // function Game(playerone, playertwo, board, turn) {
@@ -48,9 +52,16 @@ $(function() {
         $(this).click(function() {
             $("p", this).text("hello");
             $(".col-md-4", this).off();
+            playerone.pChoices.push(this.id);
+            alert(playerone.pChoices);
+
+            playerone.checkVictory(playerone.pChoices);
         });
     });
 });
+
+
+// for .col-md-4 (i=0 i<=9 i++)
 
 // check box allow box to be selected
 // if free and check to see
